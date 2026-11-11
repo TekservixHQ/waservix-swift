@@ -30,7 +30,7 @@ public struct WAservixError: Error, LocalizedError, CustomStringConvertible {
 ///
 /// Keep the key on your server. Never ship it inside an iOS or macOS app.
 public final class WAservixClient {
-    public static let version = "1.0.0"
+    public static let version = "1.0.1"
     public static let defaultBaseURL = "https://tekservix.com/waservix/api"
 
     public let baseURL: String

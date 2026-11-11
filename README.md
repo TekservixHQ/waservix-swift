@@ -31,6 +31,13 @@ targets: [
 
 In Xcode: File -> Add Package Dependencies, then paste `https://github.com/TekservixHQ/waservix-swift`.
 
+
+## CocoaPods
+
+```ruby
+pod 'WAservix', '~> 1.0'
+```
+
 ## Quick start
 
 Copy your device's API key from the WAservix dashboard (Devices -> API key) and keep it on your server.
