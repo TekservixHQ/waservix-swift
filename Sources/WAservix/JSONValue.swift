@@ -4,7 +4,7 @@ import Foundation
 ///
 ///     let result = try await wa.sendText(to: "+15551234567", text: "Hi")
 ///     result["msgId"]?.intValue // 58213
-public enum JSONValue: Codable, Equatable, Hashable, CustomStringConvertible {
+public enum JSONValue: Codable, Equatable, Hashable, CustomStringConvertible, Sendable {
     case null
     case bool(Bool)
     case number(Double)
