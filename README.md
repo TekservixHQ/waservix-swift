@@ -38,6 +38,29 @@ In Xcode: File -> Add Package Dependencies, then paste `https://github.com/Tekse
 pod 'WAservix', '~> 1.0'
 ```
 
+## Objective-C
+
+For Objective-C apps there is a separate pod with the same features, built on Foundation only:
+
+```ruby
+pod 'WAservixObjC', '~> 1.0'
+```
+
+```objc
+#import <WAservixObjC/WAservixObjC.h>
+
+TSXWAservixClient *client = [[TSXWAservixClient alloc] initWithAPIKey:@"wpk_your_device_key"];
+[client sendTextTo:@"+250788123456"
+              text:@"Your order #1042 has shipped."
+        completion:^(id data, NSError *error) {
+    if (error) NSLog(@"Failed: %@", error.localizedDescription);   // error.code = HTTP status
+    else NSLog(@"Queued: %@", data);
+}];
+
+// Webhooks: check X-Webhook-Signature
+BOOL valid = [TSXWAservixClient verifyWebhookSignature:signatureHeader secret:@"your-webhook-secret"];
+```
+
 ## Quick start
 
 Copy your device's API key from the WAservix dashboard (Devices -> API key) and keep it on your server.
